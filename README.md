@@ -3,7 +3,7 @@
 - [# 🛠 Tech Stack](# 🛠 Tech Stack)
 
 
-# Absolute-Cinema
+# 🎥Absolute-Cinema
 映画情報を扱うアプリケーション「Absolute-Cinema」の開発を行うリポジトリです
 
 # 📖About This App
