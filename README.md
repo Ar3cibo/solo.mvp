@@ -26,7 +26,7 @@ Absolute-Cinema は、映画情報を扱うアプリケーションです。映�
 ### Backend
 - Postgres
 - Knex
-- express
+- [express](https://github.com/expressjs/express)
 
 ### Frontend
 - React
