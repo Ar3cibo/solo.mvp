@@ -1,3 +1,9 @@
+```mermaid
+---
+title: "毎日TODO ER図"
+---
+erDiagram
+
 movies ||--o{ details : "1つの映画は0以上の詳細を持つ"
 movies ||--o{ movie_person_roles : "1つの映画は0以上の関連情報を持つ"
 persons ||--o{ movie_person_roles : "1人の関係者は0以上の関連情報を持つ"
