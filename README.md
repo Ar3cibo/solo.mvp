@@ -1,6 +1,6 @@
 # Link
 - [Absolute-Cinema](#Absolute-Cinema)
-- [# 🛠 Tech Stack](# 🛠 Tech Stack)
+- [Tech Stack](#Tech Stack)
 
 
 # 🎥Absolute-Cinema
