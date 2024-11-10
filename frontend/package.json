@@ -1,0 +1,12 @@
+{
+  "name": "solo.mvp",
+  "version": "1.0.0",
+  "description": "- [🎥 Absolute-Cinema](#-absolute-cinema) - [📖 About This App](#-about-this-app) - [🚀 Features](#-features) - [🛠 Tech Stack](#-tech-stack)   - [Backend](#backend)   - [Frontend](#frontend) - [📋 Database Schema](#-database-schema)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
