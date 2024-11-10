@@ -1,6 +1,12 @@
-# Link
-- [Absolute-Cinema](#Absolute-Cinema)
-- [Tech Stack](#TechStack)
+## 📚 Table of Contents
+
+- [🎥 Absolute-Cinema](#-absolute-cinema)
+- [📖 About This App](#-about-this-app)
+- [🚀 Features](#-features)
+- [🛠 Tech Stack](#-tech-stack)
+  - [Backend](#backend)
+  - [Frontend](#frontend)
+- [📋 Database Schema](#-database-schema)
 
 
 # 🎥Absolute-Cinema
