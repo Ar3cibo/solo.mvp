@@ -31,7 +31,7 @@ Absolute-Cinema は、映画情報を扱うアプリケーションです。映�
 ### Frontend
 - React
 
-- ## 📋 Database Schema
+## 📋 Database Schema
 
 プロジェクトのデータベース設計は以下の通りです：
 
