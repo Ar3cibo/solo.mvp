@@ -29,7 +29,7 @@ Absolute-Cinema は、映画情報を扱うアプリケーションです。映�
 - [express](https://github.com/expressjs/express)
 
 ### Frontend
-- React
+- [React](https://github.com/facebook/react)_
 
 ## 📋 Database Schema
 
