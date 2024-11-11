@@ -114,10 +114,4 @@ async function movie_person_roles() {
     });
 }
 
-async function test() {
-    console.log('test', await details());
-}
-
-test();
-
 module.exports = { movies, persons, roles, details, movie_person_roles };
