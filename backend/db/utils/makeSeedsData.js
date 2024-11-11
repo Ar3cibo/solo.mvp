@@ -30,9 +30,8 @@ async function personIdToCoreMovieIDs(id) {
         (movie) => movie.job === 'Director' || movie.job === 'Writer',
     );
     const idArr = directedOrWrittenMovies.map((movie) => movie.id);
-    const idJobtArr = directedOrWrittenMovies.map((movie) => [movie.id, movie.job]);
-    const idArrPure = [...Array.from(new Set(idArr))];
-    return idArrPure;
+
+    return [...Array.from(new Set(idArr))]; // eliminating duplication
 }
 
 // fetch movie data
