@@ -47,7 +47,7 @@ async function getMoviesDetails(idArray) {
 }
 
 function moviesInfoExtraction(detailsArr) {
-    return detailsArr.map((movie, index) => {
+    return detailsArr.map((movie) => {
         return {
             tmdb_id: movie.id,
             title: movie.original_title,
