@@ -4,10 +4,6 @@ const { movies } = require('./db/utils/makeSeedsData');
 const app = express();
 const db = knex();
 
-async function setupDatabase() {
-    const exists = await db.schema.hasTable('movies');
-}
-
 /**
  * defining models
  */
