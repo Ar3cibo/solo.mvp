@@ -1,44 +1,62 @@
 //import components
 import PosterHover from "./components/PosterHover.jsx";
+import Navbar from "./components/Navbar.jsx";
 
 // import dependencies
 import axios from "axios";
 import {useEffect, useState} from "react";
+import {Box, Flex, Theme} from "@chakra-ui/react";
+
 
 
 
 function App() {
 
     const [movies, setMovies] = useState([])
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchMovies = async () => {
-            const res = await axios.get("http://localhost:3000/api/movies");
-            console.log("Fetched movies:", res.data[0].poster_url);
-            setMovies(res.data);
+            try {
+                const res = await axios.get("http://localhost:3000/api/movies");
+                setMovies(res.data);
+                setLoading(false);
+
+            }catch(error) {
+                console.error("Error fetching movies:", error);
+            } finally {
+                setLoading(false);
+            }
         }
         fetchMovies()
-    },[])
+    },[]);
+
+
+
+        const posterComponents = movies.map((movie) => {
+            return <PosterHover key={movie.id} movie={movie}/>
+        });
+
+        const containerStyle = {
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '10px',
+            padding: '10px',
+        };
+
+        const centeredPosterComponents =
+                    <div style={containerStyle}>
+                        {posterComponents}
+                    </div>
 
     return (
         <>
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-            {movies.length > 0 ? <PosterHover movie={movies[0]}/> : <p>loading</p>}
-
+            <Box bg ="#1f2c2d">
+                <Navbar />
+                {loading ? <p>Loading...</p> : centeredPosterComponents}
+            </Box>
         </>
     )
 }

@@ -1,15 +1,1 @@
-.poster{
-    border: 1px solid hsl(10, 0%, 10%);
-    border-radius: 8px;
-    box-shadow: 5px 5px 5px hsl(10, 0%, 10%);
-    padding: 15px;
-    padding-bottom: 5px;
-    text-align: center;
-    max-width: 200px;
-    display: inline-block;
-    margin: 5px;
-}
 
-.poster__image{
-    width: 100%;
-}
