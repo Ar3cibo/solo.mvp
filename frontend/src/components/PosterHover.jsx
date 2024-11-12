@@ -1,4 +1,3 @@
-
 import { Image } from '@chakra-ui/react';
 import { Box } from "@chakra-ui/react"
 import { Text } from "@chakra-ui/react"
@@ -14,10 +13,16 @@ function PosterHover ({ movie }) {
 
     const [open, setOpen] = useState(false)
 
+    // マウスがコンポーネントに入った時に open を true にする
+    const handleMouseEnter = () => setOpen(true);
+
+    // マウスがコンポーネントから出た時に open を false にする
+    const handleMouseLeave = () => setOpen(false);
+
     return (
 
         <>
-            <div className="poster">
+            <div className="poster" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 <HoverCardRoot size="sm" openDelay={500} closeDelay={100} positioning={{ placement: "bottom" }} open={open} onOpenChange={(e) => setOpen(e.open)}>
                     <HoverCardTrigger asChild>
                         <Image width = "200px" src={realUrl} alt="Poster" />
@@ -34,7 +39,6 @@ function PosterHover ({ movie }) {
                     </HoverCardContent>
                 </HoverCardRoot>
             </div>
-
         </>
     )
 }
