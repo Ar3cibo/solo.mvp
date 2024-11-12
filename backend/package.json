@@ -9,7 +9,7 @@
     "db:seed": "knex seed:run",
     "db:seed-make": "knex seed:make",
     "db:reset": "knex migrate:rollback --all && knex migrate:latest && knex seed:run",
-    "dev": ""
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",

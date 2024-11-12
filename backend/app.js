@@ -1,9 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const knex = require('/db/knex');
+const db = require('./db/knex');
 const { movies } = require('./db/utils/makeSeedsData');
 const app = express();
-const db = knex();
 
 /**
  * defining models
@@ -11,7 +10,16 @@ const db = knex();
 
 const movieModel = {
     async findAll() {
-        return db('movies').select('*');
+        return db('movies as m')
+            .join('details as d', 'm.id', 'd.movie_id')
+            .select(
+                'm.tmdb_id',
+                'd.title',
+                'd.catchphrase',
+                'd.synopsis',
+                'd.poster_url',
+                'd.release_date',
+            );
     },
 };
 const personModel = {
@@ -40,7 +48,8 @@ const movieController = {
             const movies = await movieModel.findAll();
             res.status(200).json(movies);
         } catch (err) {
-            res.status(500).json({ error: 'failed to get movies' });
+            console.error('Error fetching movies:', err);
+            res.status(500).json({ error: 'failed to get movies', err });
         }
     },
 };
@@ -78,6 +87,6 @@ const detailController = {
 app.use(express.json());
 app.use(cors());
 
-app.get('/api/movies', movieController.findAll);
+app.get('/api/movies', movieController.all);
 
 module.exports = app;
