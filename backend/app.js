@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const knex = require('/db/knex');
 const { movies } = require('./db/utils/makeSeedsData');
 const app = express();
@@ -75,7 +76,8 @@ const detailController = {
 };
 
 app.use(express.json());
+app.use(cors());
 
-app.get('/movies', movieController.findAll);
+app.get('/api/movies', movieController.findAll);
 
 module.exports = app;
