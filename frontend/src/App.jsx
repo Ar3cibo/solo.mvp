@@ -1,24 +1,69 @@
+//import components
+import Demo from "./Demo.jsx";
+
+// import dependencies
 import axios from "axios";
-// import Poster from './components/Poster'
 import {useEffect, useState} from "react";
-import propsTest from "../public/movie-film.svg";
+
+// import chakra UI components
+import {PasswordInput} from "./components/ui/password-input.jsx";
+import { Button } from "./components/ui/button.jsx"
+import {
+    Image,
+} from '@chakra-ui/react';
+
+import {
+    PopoverArrow,
+    PopoverBody,
+    PopoverContent,
+    PopoverRoot,
+    PopoverTrigger,
+} from "./components/ui/popover"
+
+
 // just for demo
 
 function Poster({movie}) {
-    const mononoke_url = "https://image.tmdb.org/t/p/w1280/cDuKyP0SqubYo7hTVMN5wihjjJG.jpg"
+    // const mononoke_url = "https://image.tmdb.org/t/p/w1280/cDuKyP0SqubYo7hTVMN5wihjjJG.jpg"
 
     const realUrl  = "https://image.tmdb.org/t/p/w1280/" + movie.poster_url
+
+    const [open, setOpen] = useState(false)
 
     return (
         <>
             <div className="poster">
                 <img className="poster__image" src={realUrl} alt="Poster" />
-                <h1 className="poster__title">Poster</h1>
-                <p>OverView : a long time ago...</p>
+
+
+
+            <PopoverRoot open={open} onOpenChange={(e) => setOpen(e.open)}>
+                <PopoverTrigger asChild>
+                    <Button size="sm" variant="outline">
+                        Click me
+                    </Button>
+                </PopoverTrigger>
+                <PopoverContent>
+                    <PopoverArrow />
+                    <PopoverBody>
+                        This is a popover with the same width as the trigger button
+                    </PopoverBody>
+                </PopoverContent>
+            </PopoverRoot>
+
             </div>
+
+
+            <Image src={realUrl} alt="Poster" />
+
         </>
+
     )
 }
+
+
+
+
 
 function App() {
 
@@ -37,6 +82,7 @@ function App() {
         <>
             {movies.length > 0 ? <Poster movie={movies[0]}/> : <p>loading</p>}
 
+
         </>
 )
 }
@@ -54,3 +100,7 @@ export default App
 //
 //     const moviesArr = movies.map((movie) => {movie.poster_url = "https://image.tmdb.org/t/p/w1280/" + movie.poster_url})
 //     const proMan = movies[0].poster_url;
+
+
+
+
