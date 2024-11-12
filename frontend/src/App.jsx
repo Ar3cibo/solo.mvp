@@ -16,9 +16,11 @@ import {
     PopoverArrow,
     PopoverBody,
     PopoverContent,
-    PopoverRoot,
+    PopoverRoot, PopoverTitle,
     PopoverTrigger,
 } from "./components/ui/popover"
+
+import {Text} from "@chakra-ui/react"
 
 
 // just for demo
@@ -33,28 +35,30 @@ function Poster({movie}) {
     return (
         <>
             <div className="poster">
-                <img className="poster__image" src={realUrl} alt="Poster" />
+                <Image width = "200px" src={realUrl} alt="Poster" />
+                <br/>
+                <PopoverRoot open={open} onOpenChange={(e) => setOpen(e.open)}>
+                    <PopoverTrigger asChild>
+                        <Button size="sm" variant="outline">
+                            Detail
+                        </Button>
+                    </PopoverTrigger>
+                    <PopoverContent>
+                        <PopoverArrow />
+                        <PopoverBody>
+                            <PopoverTitle fontSize = "xl" fontWeight="bold"> {movie.title} </PopoverTitle>
+                            <br/>
+                            <Text fontSize = "lg" fontWeight="bold">{movie.catchphrase}</Text>
+                            <br/>
+                            <Text fontSize = "sm" >{movie.synopsis}</Text>
 
-
-
-            <PopoverRoot open={open} onOpenChange={(e) => setOpen(e.open)}>
-                <PopoverTrigger asChild>
-                    <Button size="sm" variant="outline">
-                        Click me
-                    </Button>
-                </PopoverTrigger>
-                <PopoverContent>
-                    <PopoverArrow />
-                    <PopoverBody>
-                        This is a popover with the same width as the trigger button
-                    </PopoverBody>
-                </PopoverContent>
-            </PopoverRoot>
-
+                        </PopoverBody>
+                    </PopoverContent>
+                </PopoverRoot>
             </div>
 
 
-            <Image src={realUrl} alt="Poster" />
+
 
         </>
 
