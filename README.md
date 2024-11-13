@@ -9,10 +9,18 @@
 - [📋 Database Schema](#-database-schema)
 
 
-# 🎥Absolute-Cinema
+# 🎥 Absolute-Cinema
 映画情報を扱うアプリケーション「Absolute-Cinema」の開発を行うリポジトリです
 
-# 📖About This App
+# 💡Concepts
+「Absolute Cinema」は、映画の真髄を感じさせる作品を探し出すことをコンセプトにした映画情報サイトです。
+本サービスの名前は、巨匠マーティン・スコセッシ監督の「真の映画とは何か」にまつわる一連の議論と、そこから発展した[インターネット・ミーム](https://trending.knowyourmeme.com/editorials/guides/what-is-absolute-cinema-martin-scorseses-this-is-cinema-memes-explained)に由来しています。
+映画やアニメを見終えたあとで、その素晴らしさに思わず言葉を失う…という体験をしたことはありませんか？
+このミームはそんな「これこそが映画だ！」という感覚を表現したいときに使われます。
+
+本サイトでは映画ファンと映画をつなぎ、新たな映画との出会いをサポートしたいという思いから生まれました。
+
+# 📖 About This App
 Absolute-Cinema は、映画情報を扱うアプリケーションです。映画の詳細情報を確認したり、情報を辿って新たな映画を発見できる他、将来的にはレビューの投稿やウォッチリストへの登録機能も提供予定（？）です。
 
 # 🚀 Features
