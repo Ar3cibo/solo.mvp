@@ -38,10 +38,6 @@ Absolute-Cinema は、映画情報を扱うアプリケーションです。映�
 
 ```mermaid
 
----
-title: "ERD for absolute-cinema"
----
-
 erDiagram
     MOVIES ||--o{ MOVIE_PERSON_ROLES : "1つの映画は0以上の関連情報を持つ"
     PERSONS ||--o{ MOVIE_PERSON_ROLES : "1人の関係者は0以上の関連情報を持つ"
