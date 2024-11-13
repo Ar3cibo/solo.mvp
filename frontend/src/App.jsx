@@ -33,7 +33,11 @@ function App() {
         fetchMovies()
     },[]);
 
-
+    const rootComponent =
+        <Box bg ="#1f2c2d">
+                <Navbar />
+                <MovieList movies={movies} loading={loading}></MovieList>
+        </Box>
 
     return (
         <>

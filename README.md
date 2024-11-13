@@ -30,6 +30,7 @@ Absolute-Cinema は、映画情報を扱うアプリケーションです。映�
 
 ### Frontend
 - [React](https://github.com/facebook/react)
+- [chakra UI](https://www.chakra-ui.com/)
 
 ## 📋 Database Schema
 
