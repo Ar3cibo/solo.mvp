@@ -12,14 +12,20 @@ const movieModel = {
     async findAll() {
         return db('movies as m')
             .join('details as d', 'm.id', 'd.movie_id')
+            .leftJoin('movie_person_roles as mpr', 'm.id', 'mpr.movie_id')
+            .leftJoin('persons as p', 'mpr.person_id', 'p.id')
+            .leftJoin('roles as r', 'mpr.role_id', 'r.id')
             .select(
-                'm.id',
+                'm.id as movie_id',
                 'm.tmdb_id',
                 'd.title',
                 'd.catchphrase',
                 'd.synopsis',
                 'd.poster_url',
                 'd.release_date',
+                'p.id as person_id',
+                'p.name as person_name',
+                'r.role as role_name',
             );
     },
 };
