@@ -26,7 +26,6 @@ function PosterHover ({ movie }) {
         <>
 
                 <Box
-                    bg ="#1f2c2d"
                     w="200px"
                     p="2"
                     borderRadius="md"
@@ -35,7 +34,7 @@ function PosterHover ({ movie }) {
                     display = "inline-block"
                     _hover={{
                         borderColor: "#ee2f30",
-                        boxShadow: "0 0 15px #ee2f30", // green growing effect
+                        boxShadow: "0 0 15px #ee2f30",
                     }}
                 >
                     <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
