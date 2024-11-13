@@ -15,6 +15,9 @@
 # 💡Concepts
 「Absolute Cinema」は、映画の真髄を感じさせる作品を探し出すことをコンセプトにした映画情報サイトです。
 本サービスの名前は、巨匠マーティン・スコセッシ監督の「真の映画とは何か」にまつわる一連の議論と、そこから発展した[インターネット・ミーム](https://trending.knowyourmeme.com/editorials/guides/what-is-absolute-cinema-martin-scorseses-this-is-cinema-memes-explained)に由来しています。
+
+<img src="https://github.com/username/repo/blob/main/images/logo.png" alt="Absolute Cinema Meme" width="200">
+
 映画やアニメを見終えたあとで、その素晴らしさに思わず言葉を失う…という体験をしたことはありませんか？
 このミームはそんな「これこそが映画だ！」という感覚を表現したいときに使われます。
 
