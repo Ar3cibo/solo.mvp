@@ -1,4 +1,4 @@
-//import components
+//import React components
 import PosterHover from "./components/PosterHover.jsx";
 import Navbar from "./components/Navbar.jsx";
 
@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar.jsx";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import {Box, Flex, Theme} from "@chakra-ui/react";
-
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 
 
