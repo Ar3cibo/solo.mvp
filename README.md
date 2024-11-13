@@ -7,7 +7,7 @@
   - [Backend](#backend)
   - [Frontend](#frontend)
 - [📋 Database Schema](#-database-schema)
-
+- [📝 Usage](#-usage)
 
 # 🎥 Absolute-Cinema
 映画情報を扱うアプリケーション「Absolute-Cinema」の開発を行うリポジトリです
@@ -44,6 +44,8 @@ Absolute-Cinema は、映画情報を扱うアプリケーションです。映�
 ### Frontend
 - [React](https://github.com/facebook/react)
 - [chakra UI](https://www.chakra-ui.com/)
+
+
 
 ## 📋 Database Schema
 
@@ -85,5 +87,135 @@ erDiagram
         varchar poster_url "ポスターのURL"
         date release_date "公開日"
     }
+  ```
+
+# 📝 Usage
+
+このプロジェクトは、フロントエンドとバックエンドから構成されるアプリケーションです。以下の手順に従って、開発環境をセットアップし、ローカルでアプリケーションを実行してください。
+
+## 前提条件
+
+- [Node.js](https://nodejs.org/)（推奨バージョン: 16.x 以上）
+- [npm](https://www.npmjs.com/)（Node.jsに付属）
+- [PostgreSQL](https://www.postgresql.org/)（バックエンド用データベース）
+- [TMBD](https://www.themoviedb.org/?language=ja) (シードファイルを自分で作成する場合)
+
+## インストール手順
+
+### 1. リポジトリをクローン
+
+```bash
+git clone https://github.com/your-username/your-repository.git
+cd your-repository
+```
+
+### 2. フロントエンドとバックエンドの依存関係をインストール
+
+それぞれのディレクトリに移動し、`npm install` を実行します。
+
+#### フロントエンド
+
+```bash
+cd frontend
+npm install
+```
+
+#### バックエンド
+
+```bash
+cd backend
+npm install
+```
+
+### 3. バックエンドの設定
+
+#### 3.1 PostgreSQLのインストール
+
+使用しているOSに応じて、[PostgreSQL](https://www.postgresql.org/download/)をインストールしてください。
+
+#### 3.2 データベースの作成
+
+PostgreSQLを起動し、任意の名前で新しいデータベースを作成します。
+
+例：
+
+```sql
+CREATE DATABASE your_database_name;
+```
+
+#### 3.3 環境変数の設定
+
+バックエンドディレクトリに `.env.development` ファイルを作成し、以下の環境変数を記述します。
+
+```env
+# Database設定
+DB_USER=あなたのユーザー名
+DB_PASSWORD=あなたのパスワード（設定していない場合は空）
+DB_NAME=作成したデータベース名
+
+# TMDB API設定
+TMDB_BEARER_TOKEN=TMDBから取得したBEARER_API_TOKEN
+```
+
+**例：**
+
+```env
+DB_USER=postgres
+DB_PASSWORD=yourpassword
+DB_NAME=myapp_db
+
+TMDB_BEARER_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+```
+
+#### 3.4 データベースのマイグレーションとシーディング
+
+バックエンドディレクトリで以下のコマンドを実行し、データベースのマイグレーションとシーディングを行います。
+
+```bash
+npm run db:latest && npm run db:seed
+```
+
+#### 3.5 サーバーの起動
+
+バックエンドサーバーを起動します。
+
+```bash
+npm run dev
+```
+
+コンソールに `Listening on port ${PORT}` と表示されれば、サーバーが正常に起動しています。
+
+### 4. フロントエンドの設定
+
+#### 4.1 サーバーの起動
+
+フロントエンドディレクトリに移動し、以下のコマンドを実行します。
+
+```bash
+cd frontend
+npm run dev
+```
+
+コンソールでViteが起動していることを確認し、表示されたURLにアクセスします。
+
+**例：**
+
+```
+VITE v4.0.0  ready in 300 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+```
+
+**例：**: この場合、ブラウザで `http://localhost:5173/` にアクセスすると、アプリケーションが利用可能です。
+
+## 使用方法
+
+上記で表示されたURLにアクセスするとサービスが利用できます。
+
+## 注意
+
+- **データベース接続エラー**: `.env.development` ファイルの `DB_USER`, `DB_PASSWORD`, `DB_NAME` が正しいことを確認してください。
+- **ポートが既に使用中**: 他のプロセスが同じポートを使用していないかを確認し、必要に応じてポート番号を変更してください。
 
 

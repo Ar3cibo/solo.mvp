@@ -66,8 +66,7 @@ export default App
 //     "release_date": "1997-07-11T15:00:00.000Z"
 // }
 //
-//     const moviesArr = movies.map((movie) => {movie.poster_url = "https://image.tmdb.org/t/p/w1280/" + movie.poster_url})
-//     const proMan = movies[0].poster_url;
+
 
 
 
