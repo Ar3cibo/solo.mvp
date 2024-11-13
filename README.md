@@ -42,13 +42,12 @@ Absolute-Cinema は、映画情報を扱うアプリケーションです。映�
 title: "ERD for absolute-cinema"
 ---
 
-
+erDiagram
     MOVIES ||--o{ MOVIE_PERSON_ROLES : "1つの映画は0以上の関連情報を持つ"
     PERSONS ||--o{ MOVIE_PERSON_ROLES : "1人の関係者は0以上の関連情報を持つ"
     ROLES ||--o{ MOVIE_PERSON_ROLES : "1つの役割は0以上の関連情報を持つ"
-    MOVIES ||--o{ DETAILS : "1つの映画は0以上の詳細を持つ"
+    MOVIES ||--|| DETAILS : "1つの映画は1つの詳細を持つ"
 
-erDiagram
     MOVIES {
         integer id PK "映画の一意識別子"
         integer tmdb_id "映画ID (TMDbからの外部ID)"
@@ -66,6 +65,7 @@ erDiagram
         integer movie_id FK "関連する映画のID"
         integer person_id FK "関連する関係者のID"
         integer role_id FK "関連する役割のID"
+        string character_name "キャラクター名（役者の場合のみ）"
     }
     DETAILS {
         integer id PK "詳細情報の一意識別子"
@@ -75,7 +75,6 @@ erDiagram
         text synopsis "あらすじ"
         varchar poster_url "ポスターのURL"
         date release_date "公開日"
-        string character_name "キャラクター名（役者の場合のみ）"
     }
 
 
