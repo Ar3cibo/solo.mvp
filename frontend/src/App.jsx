@@ -1,13 +1,15 @@
 //import React components
-import PosterHover from "./components/PosterHover.jsx";
+
 import Navbar from "./components/Navbar.jsx";
+import MovieList from "./components/MovieList.jsx";
+import MovieDetails from "./components/MovieDetails.jsx";
 
 // import dependencies
 import axios from "axios";
 import {useEffect, useState} from "react";
-import {Box, Flex, Theme} from "@chakra-ui/react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
+import {Box} from "@chakra-ui/react";
 
 
 function App() {
@@ -33,30 +35,18 @@ function App() {
 
 
 
-        const posterComponents = movies.map((movie) => {
-            return <PosterHover key={movie.id} movie={movie}/>
-        });
-
-        const containerStyle = {
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '10px',
-            padding: '10px',
-        };
-
-        const centeredPosterComponents =
-                    <div style={containerStyle}>
-                        {posterComponents}
-                    </div>
-
     return (
         <>
             <Box bg ="#1f2c2d">
                 <Navbar />
-                {loading ? <p>Loading...</p> : centeredPosterComponents}
+                <MovieList movies={movies} loading={loading}></MovieList>
             </Box>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<></>} />
+                    <Route path="/movies:id" element={<></>} />
+                </Routes>
+            </Router>
         </>
     )
 }

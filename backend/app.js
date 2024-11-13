@@ -13,6 +13,7 @@ const movieModel = {
         return db('movies as m')
             .join('details as d', 'm.id', 'd.movie_id')
             .select(
+                'm.id',
                 'm.tmdb_id',
                 'd.title',
                 'd.catchphrase',

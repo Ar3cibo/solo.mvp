@@ -1,6 +1,7 @@
 import { Image } from '@chakra-ui/react';
 import { Box } from "@chakra-ui/react"
 import { Text } from "@chakra-ui/react"
+import {Link} from "@chakra-ui/react"
 import {Theme} from "@chakra-ui/react";
 
 import {HoverCardArrow, HoverCardContent, HoverCardRoot, HoverCardTrigger} from "./ui/hover-card.jsx";
@@ -12,6 +13,7 @@ import {useState} from "react";
 function PosterHover ({ movie }) {
 
     const realUrl  = "https://image.tmdb.org/t/p/w1280/" + movie.poster_url
+    const detailsLink = "/movies/" + movie.id
 
     const [open, setOpen] = useState(false)
 
@@ -40,7 +42,9 @@ function PosterHover ({ movie }) {
                     <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                         <HoverCardRoot size="sm" openDelay={500} closeDelay={100} positioning={{ placement: "bottom" }} open={open} onOpenChange={(e) => setOpen(e.open)}>
                             <HoverCardTrigger asChild>
-                                <Image width = "200px" src={realUrl} alt="Poster" />
+                                <Link href={detailsLink}>
+                                    <Image width = "200px" src={realUrl} alt="Poster" />
+                                </Link>
                             </HoverCardTrigger>
                             <HoverCardContent maxWidth="400px">
                                 <HoverCardArrow />
