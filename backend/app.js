@@ -16,7 +16,7 @@ const movieModel = {
             .leftJoin('persons as p', 'mpr.person_id', 'p.id')
             .leftJoin('roles as r', 'mpr.role_id', 'r.id')
             .select(
-                'm.id as movie_id',
+                'm.id',
                 'm.tmdb_id',
                 'd.title',
                 'd.catchphrase',
