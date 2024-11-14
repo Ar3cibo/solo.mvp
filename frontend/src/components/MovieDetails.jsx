@@ -27,30 +27,28 @@ export default function MovieDetails({ movie, loading }) {
     }
 
     // 経由URLの構築
-    const realUrl = `https://image.tmdb.org/t/p/w500${movie.poster_url}`; // 必要に応じてサイズを調整
+    const realUrl = `https://image.tmdb.org/t/p/w500${movie.poster_url}`;
 
     // 発表年の抽出
     const releaseYear = new Date(movie.release_date).getFullYear();
 
-    // 関係者の情報を配列として扱う（複数の関係者がいる場合に対応）
+
     const personnel = [
         {
             id: movie.person_id,
             name: movie.person_name,
             role: movie.role_name,
         },
-        // 追加の関係者があればここに追加
+
     ];
 
     return (
         <Box maxW="1200px" mx="auto" p={5}>
-            {/* ポスターとテキストコンテンツを左右に配置 */}
             <Flex
                 direction={{ base: "column", md: "row" }}
                 align="flex-start"
                 justify="space-between"
             >
-                {/* ポスター画像を左側に配置 */}
                 <Box flexShrink={0} mr={{ md: 5 }}>
                     <Image
                         width={{ base: "100%", md: "400px" }}
